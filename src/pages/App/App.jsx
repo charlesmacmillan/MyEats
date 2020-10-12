@@ -27,32 +27,34 @@ class App extends Component {
     this.setState({user: userService.getUser()})
   }
 /*--- Lifecycle Methods ---*/
-  // async componentDidMount() {
-  //   const recipes = await getRecipeByIngredients();
-  //   this.setState({
-  //     recipes: recipes
-  //   })
-  //   console.log(this.state)
-  // }
+  async componentDidMount() {
+    const recipes = await getRecipeByIngredients();
+    this.setState({
+      recipes: recipes
+    })
+  }
 
   render() {
     return (
-      <div className="App-body">
+      <div>
           <NavBar 
             user={this.state.user} 
             handleLogout={this.handleLogout}
-          />
+        />
+        <div className="App-body">
         <Switch>
           <Route exact path='/' render={() =>
             <div>
-              <Body />
+              <Body
+                  user={this.state.user}
+                  recipes={this.state.recipes}
+              />
            </div> 
           }/>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
-              
             />
           }/>
           <Route exact path='/login' render={({history}) => 
@@ -64,7 +66,8 @@ class App extends Component {
         </Switch>
         <footer className="App-footer">
           <p>Site Created By: Charles MacMillan</p>
-        </footer>
+          </footer>
+          </div>
       </div>
     );
   }

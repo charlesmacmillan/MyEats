@@ -5,7 +5,7 @@ import './Inventory.css';
 const Inventory = (props) => {
     return (
         <div className="Inventory-box">
-            <h2>Inventory</h2>
+            <h2>{props.user.name}'s Inventory</h2>
             <ul>
                 <li>Thing1</li>
                 <li>Thing2</li>

@@ -5,14 +5,18 @@ import Recipe from '../Recipe/Recipe';
 import SearchBar from '../SearchBar/SearchBar';
 
 const Recipes = (props) => {
+    console.log('props', props.recipes)
     return (
         <div className="Recipes-container">
             <SearchBar />
             <div className="Recipes-box">
-                <Recipe />
-                <Recipe />
-                <Recipe />
-                <Recipe />
+                {/* {props.recipes.map((recipe, idx) => */}
+                    <Recipe />
+                    <Recipe />
+                    <Recipe />
+                    <Recipe />
+                    <Recipe />
+                {/* )} */}
             </div>
         </div>
     )
