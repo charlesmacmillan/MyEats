@@ -5,9 +5,7 @@ import './NavBar.css';
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
-      <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+      <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT - {props.user.name}</Link>
     </div>
     :
     <div>
@@ -18,6 +16,10 @@ const NavBar = (props) => {
 
   return (
     <div className='NavBar'>
+      <Link to='/' className="NavBar-img">
+        <h1>My Eats</h1>
+        <img src="https://i.imgur.com/9ohGIv7.png" alt="avocado" />
+      </Link>
       {nav}
     </div>
   );

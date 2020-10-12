@@ -1,0 +1,16 @@
+.Recipes-box {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Recipes-container {
+    grid-area: 1/3/5/7;
+}
+
+@media only screen and (max-width: 700px) {
+  .Recipes-container {
+    grid-area: 1/4/5/7;
+  }
+}
