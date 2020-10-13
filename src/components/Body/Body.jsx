@@ -8,6 +8,9 @@ const Body = (props) => {
     let content = props.user ?
         <div className="Body">
             <Inventory
+                handleDeleteThing={props.handleDeleteThing}
+                handleAddThing={props.handleAddThing}
+                things={props.things}
                 user={props.user}
             />
             <Recipes

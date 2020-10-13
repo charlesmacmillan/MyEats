@@ -1,0 +1,39 @@
+.AddThingForm {
+    display: flex;
+    height: 25px;
+    margin: 20px 0;
+    padding: 0 5px;
+    justify-content: center;
+}
+
+.AddThingForm input {
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    box-shadow: 1px 1px 5px black;
+    width: 90%;
+}
+
+.AddThingForm input:hover {
+    background-color: moccasin;
+}
+
+.AddThingForm button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 5px  black;
+    background-color: rgb(0, 151, 0);
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.AddThingForm button:hover {
+    box-shadow: 1px 1px 5px  white;
+    background-color: rgb(28, 196, 28);
+}

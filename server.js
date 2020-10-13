@@ -5,6 +5,8 @@ const logger = require('morgan');
 
 const app = express();
 
+const thingsRouter = require('./routes/api/things');
+
 require('dotenv').config();
 require('./config/database');
 
@@ -15,6 +17,8 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
+
+app.use('/api/things', thingsRouter);
 app.use('/api/users', require('./routes/api/users'));
 app.use(require('./config/auth'));
 

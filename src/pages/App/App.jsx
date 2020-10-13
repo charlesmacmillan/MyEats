@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import { getRecipeByIngredients } from '../../services/spoonacular';
+import * as thingAPI from '../../services/things-api';
 import Body from '../../components/Body/Body';
 
 class App extends Component {
@@ -13,9 +14,27 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
-      recipes: null
+      things: [],
+      recipes: []
     };
   }
+
+  handleAddThing = async newThingData => {
+    const newThing = await thingAPI.create(newThingData);
+    console.log(newThing);
+    this.setState(state => ({
+      things: [...state.things, newThing]
+    }),
+      () => this.props.history.push('/'));
+  }
+
+  handleDeleteThing= async id => {
+  await thingAPI.deleteOne(id);
+  this.setState(state => ({
+    // Yay, filter returns a NEW array
+    things: state.things.filter(p => p._id !== id)
+  }), () => this.props.history.push('/'));
+}
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
@@ -26,28 +45,34 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()})
   }
+
 /*--- Lifecycle Methods ---*/
   async componentDidMount() {
-    const recipes = await getRecipeByIngredients();
+    // const recipes = await getRecipeByIngredients();
+    const things = await thingAPI.getAll();
     this.setState({
-      recipes: recipes
-    })
+      // recipes: recipes,
+      things: things
+    });
   }
 
   render() {
     return (
       <div>
-          <NavBar 
-            user={this.state.user} 
-            handleLogout={this.handleLogout}
+        <NavBar 
+          user={this.state.user} 
+          handleLogout={this.handleLogout}
         />
         <div className="App-body">
         <Switch>
           <Route exact path='/' render={() =>
             <div>
               <Body
-                  user={this.state.user}
-                  recipes={this.state.recipes}
+                handleDeleteThing={this.handleDeleteThing}
+                handleAddThing={this.handleAddThing}  
+                things={this.state.things}
+                user={this.state.user}
+                recipes={this.state.recipes}
               />
            </div> 
           }/>
