@@ -7,11 +7,12 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const things = await Thing.find({});
+  const things = await Thing.find({user: req.user._id}).exec();
   res.status(200).json(things);
 }
 
 async function create(req, res) {
+  req.body.user = req.user._id
   const thing = await Thing.create(req.body);
   res.status(201).json(thing);
 }

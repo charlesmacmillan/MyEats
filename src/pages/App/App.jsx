@@ -5,7 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
-import { getRecipeByIngredients } from '../../services/spoonacular';
+// import { getRecipeByIngredients } from '../../services/spoonacular';
 import * as thingAPI from '../../services/things-api';
 import Body from '../../components/Body/Body';
 
@@ -39,7 +39,10 @@ class App extends Component {
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null})
+    this.setState({
+      user: null,
+      things: []
+    })
   }
 
   handleSignupOrLogin = () => {
@@ -54,6 +57,17 @@ class App extends Component {
       // recipes: recipes,
       things: things
     });
+  }
+  
+  async componentDidUpdate(prevProps, prevState) {
+    // const recipes = await getRecipeByIngredients();
+    if (prevState.user !== this.state.user) {
+      const things = await thingAPI.getAll();
+      this.setState({
+        // recipes: recipes,
+        things: things
+        });
+    }
   }
 
   render() {
