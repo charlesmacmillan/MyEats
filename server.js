@@ -8,9 +8,6 @@ const app = express();
 require('dotenv').config();
 require('./config/database');
 
-const thingsRouter = require('./routes/api/things');
-const spoonacularRouter = require('./routes/api/spoonacular');
-
 app.use(logger('dev'));
 app.use(express.json());
 
@@ -19,8 +16,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
 
-app.use('/api/things', thingsRouter);
-app.use('/api/spoonacular', spoonacularRouter);
+app.use('/api/things', require('./routes/api/things'));
+app.use('/api/spoonacular',  require('./routes/api/spoonacular'));
 app.use('/api/users', require('./routes/api/users'));
 
 // The following "catch all" route (note the *)is necessary

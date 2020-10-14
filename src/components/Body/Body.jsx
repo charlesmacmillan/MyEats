@@ -14,6 +14,7 @@ const Body = (props) => {
                 user={props.user}
             />
             <Recipes
+                things={props.things}
                 user={props.user}
                 recipes={props.recipes}
             />

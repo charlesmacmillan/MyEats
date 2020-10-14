@@ -7,7 +7,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const things = await Thing.find({user: req.user._id}).exec();
+  const things = await Thing.find({user: req.user._id});
   res.status(200).json(things);
 }
 

@@ -1,13 +1,16 @@
-const axios = require('axios');
+const axios = require('axios').default;
+const Thing = require('../../models/thing');
 
-const API_KEY = process.env.SPOONACULAR_KEY;
+const APIKEY = process.env.APIKEY;
 
 module.exports = {
     getRecipeByIngredients
 }
 
-function getRecipeByIngredients(req, res) {
-    axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}&ingredients=banana`)
+async function getRecipeByIngredients(req, res) {
+    const things = await Thing.find({user: req.user._id});
+    let ingredients = things.map(thing => thing.thing)
+    axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${APIKEY}&ingredients=${ingredients.join()}`)
     .then(function(response) {
         // handle success
         console.log(response);
@@ -18,10 +21,3 @@ function getRecipeByIngredients(req, res) {
         console.log(error)
     })
 }
-
-
-
-// export function getRecipeByIngredients() {
-//     return fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}&ingredients=banana`)
-//         .then(res => res.json())
-// }

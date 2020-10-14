@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import RecipePage from '../RecipePage/RecipePage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
-// import { getRecipeByIngredients } from '../../services/spoonacular';
-import * as thingAPI from '../../services/things-api';
+import * as thingAPI from '../../utils/things-api';
 import Body from '../../components/Body/Body';
 
 class App extends Component {
@@ -31,7 +31,6 @@ class App extends Component {
   handleDeleteThing= async id => {
   await thingAPI.deleteOne(id);
   this.setState(state => ({
-    // Yay, filter returns a NEW array
     things: state.things.filter(p => p._id !== id)
   }), () => this.props.history.push('/'));
 }
@@ -51,20 +50,16 @@ class App extends Component {
 
 /*--- Lifecycle Methods ---*/
   async componentDidMount() {
-    // const recipes = await getRecipeByIngredients();
     const things = await thingAPI.getAll();
     this.setState({
-      // recipes: recipes,
       things: things
     });
   }
   
   async componentDidUpdate(prevProps, prevState) {
-    // const recipes = await getRecipeByIngredients();
     if (prevState.user !== this.state.user) {
       const things = await thingAPI.getAll();
       this.setState({
-        // recipes: recipes,
         things: things
         });
     }
@@ -87,21 +82,24 @@ class App extends Component {
                 things={this.state.things}
                 user={this.state.user}
                 recipes={this.state.recipes}
-              />
+                />
            </div> 
           }/>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
           <Route exact path='/login' render={({history}) => 
             <LoginPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+          <Route exact pathh="/recipe/:id" render={({history}) =>
+            <RecipePage />
+          } />
         </Switch>
         <footer className="App-footer">
           <p>Site Created By: Charles MacMillan</p>

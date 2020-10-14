@@ -1,4 +1,4 @@
-import tokenService from '../utils/tokenService';
+import tokenService from './tokenService';
 
 const BASE_URL = './api/things';
 

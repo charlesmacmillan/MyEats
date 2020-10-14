@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import './Recipes.css';
 import Recipe from '../Recipe/Recipe';
-import SearchBar from '../SearchBar/SearchBar';
+import spoonacular from '../../utils/spoonacular';
 
-const Recipes = (props) => {
+const Recipes = props => {
+    const [recipes, setRecipes] = useState([]);
+    useEffect(() => {
+        spoonacular.getAll().then(res => setRecipes(res))
+    }, [props.things])
     return (
         <div className="Recipes-container">
-            <SearchBar />
             <div className="Recipes-box">
-                {props.recipes.map((recipe, i) =>
+                {recipes.map((recipe, i) =>
                     <Recipe 
                         recipe={recipe}
-                        i={i}
+                        key={i}
                     />
                 )}
             </div>
