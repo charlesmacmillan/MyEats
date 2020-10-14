@@ -97,8 +97,10 @@ class App extends Component {
             handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-          <Route exact pathh="/recipe/:id" render={({history}) =>
-            <RecipePage />
+          <Route exact path="/recipe/:id" render={({history}) =>
+            <RecipePage 
+              recipe={this.props.history}
+            />
           } />
         </Switch>
         <footer className="App-footer">

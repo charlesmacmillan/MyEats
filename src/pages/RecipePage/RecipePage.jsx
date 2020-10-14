@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import spoonacular from '../../utils/spoonacular';
+import React from 'react';
 import './RecipePage.css';
 
 const RecipePage = props => {
-    const [recipes, setRecipes] = useState([]);
-    useEffect(() => {
-        spoonacular.getAll().then(res => setRecipes(res))
-    }, [])
-    console.log(recipes)
+    const recipe = props.recipe.location.state.recipe;
+    console.log(recipe) 
     return(
-        <div>
-            <h1></h1>
+        <div className="">
+            <h1>{recipe.title}</h1>
+            <img src={recipe.image} alt="recipe image"/>
+            <ul>
+            {recipe.usedIngredients.map((ing, i) => 
+                <li key={i}>
+                    {ing.original}
+                </li>
+            )}
+            </ul>
         </div>
     )
 }
