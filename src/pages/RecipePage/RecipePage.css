@@ -1,0 +1,24 @@
+.RecipePage {
+    grid-area: 1/2/5/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(188, 143, 143, 0.808);
+    width: 50%;
+    margin: 25px auto 0;
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 2px 3px black;
+}
+
+.RecipePage h1 {
+    text-align: center;
+}
+
+.RecipePage img {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px black;
+}
