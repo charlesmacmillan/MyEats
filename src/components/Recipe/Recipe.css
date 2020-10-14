@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: space-between;
     width: 200px;
+    color: black;
+    text-align: center;
     background-color: rgb(226, 241, 255);
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px black;
