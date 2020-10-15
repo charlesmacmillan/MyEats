@@ -33,12 +33,48 @@
     text-transform: capitalize;
 }
 
-.RecipePage .from img {
-    border: 2px solid blue;
+.RecipePage-key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: .5px solid black;
+    border-top: .5px solid black;
+    width: 50%;
+    padding: 0 5px;
+    margin-bottom: 15px;
 }
 
-.RecipePage .not-from img {
+.RecipePage-key small {
+    margin: 5px 0;
+}
+
+.RecipePage-key-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.RecipePage .from {
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+
+.key-div {
+    padding: 5px;
+}
+
+.RecipePage .not-from {
     border: 2px solid red;
+    border-radius: 10px;
+}
+
+.RecipePage-ingredients {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .RecipePage-ing {
@@ -50,7 +86,6 @@
 }
 
 .RecipePage-ing img {
-    border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.719);
     box-shadow: 1px 2px 3px black;
     width: 75px;
@@ -62,9 +97,34 @@
     margin: 0;
 }
 
+.steps {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.steps li {
+    list-style: upper-roman;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.steps li span {
+    font-weight: 400;
+}
+
+.steps h4,
+.RecipePage-ingredients h4 {
+    text-align: center;
+    text-decoration: underline;
+}
+
 
 @media only screen and (max-width: 900px) {
     .RecipePage {
         width: 90%;
+    }
+    
+    .RecipePage-img {
+        width: 98%;
     }
 }

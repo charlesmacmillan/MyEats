@@ -23,11 +23,11 @@ async function getRecipeByIngredients(req, res) {
     })
 }
 
-async function getSteps(req, res) {
-    const id = await req.params.id;
-    axios.get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${APIKEY}`)
+function getSteps(req, res) {
+    console.log(req.params.id)
+    axios.get(`https://api.spoonacular.com/recipes/${req.params.id}/analyzedInstructions?apiKey=${APIKEY}`)
     .then(function(response) {
-        console.log('why it look like dis', response)
+        console.log('why it look like dis ----------------------------------', response)
         res.json(response.data)
     })
     .catch(function(errors) {
