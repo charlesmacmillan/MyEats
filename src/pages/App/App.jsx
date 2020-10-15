@@ -40,7 +40,9 @@ class App extends Component {
     userService.logout();
     this.setState({
       user: null,
-      things: []
+      things: [],
+      instructions: [],
+      ingredients: []
     })
   }
 
@@ -49,21 +51,21 @@ class App extends Component {
   }
 
 /*--- Lifecycle Methods ---*/
-  async componentDidMount() {
-    const things = await thingAPI.getAll();
-    this.setState({
-      things: things
-    });
-  }
+  // async componentDidMount() {
+  //   const things = await thingAPI.getAll();
+  //   this.setState({
+  //     things: things
+  //   });
+  // }
   
-  async componentDidUpdate(prevProps, prevState) {
-    if (prevState.user !== this.state.user) {
-      const things = await thingAPI.getAll();
-      this.setState({
-        things: things
-        });
-    }
-  }
+  // async componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.user !== this.state.user) {
+  //     const things = await thingAPI.getAll();
+  //     this.setState({
+  //       things: things
+  //       });
+  //   }
+  // }
 
   render() {
     return (

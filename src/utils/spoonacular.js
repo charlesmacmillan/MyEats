@@ -3,7 +3,8 @@
 
 
  export default {
-    getAll
+    getAll,
+    getInfo
  }
 
 function getAll() {
@@ -13,5 +14,15 @@ function getAll() {
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + tokenService.getToken()
     }})
-  .then(res => res.json());
+    .then(res => res.json());
+  }
+  
+  function getInfo(id) {
+    return fetch(`${BASE_URL}/${id}`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + tokenService.getToken()
+    }})
+    .then(res => res.json());
 }
