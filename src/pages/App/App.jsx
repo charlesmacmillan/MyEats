@@ -21,7 +21,6 @@ class App extends Component {
 
   handleAddThing = async newThingData => {
     const newThing = await thingAPI.create(newThingData);
-    console.log(newThing);
     this.setState(state => ({
       things: [...state.things, newThing]
     }),
