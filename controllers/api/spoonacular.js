@@ -11,7 +11,12 @@ module.exports = {
 async function getRecipeByIngredients(req, res) {
     const things = await Thing.find({user: req.user._id});
     let ingredients = things.map(thing => thing.thing)
-    axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${APIKEY}&ingredients=${ingredients.join()}&number=1`)
+    axios.get(`https://rapidapi.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredients.join()}`, {
+        headers: {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+	        "x-rapidapi-key": APIKEY
+        }
+    })
     .then(function(response) {
         // handle success
         console.log(response);
@@ -23,9 +28,16 @@ async function getRecipeByIngredients(req, res) {
     })
 }
 
+
+
 function getSteps(req, res) {
     console.log(req.params.id)
-    axios.get(`https://api.spoonacular.com/recipes/${req.params.id}/analyzedInstructions?apiKey=${APIKEY}`)
+    axios.get(`https://rapidapi.p.rapidapi.com/recipes/${req.params.id}/analyzedInstructions`, {
+        headers: {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": APIKEY
+        }
+    })
     .then(function(response) {
         console.log('why it look like dis ----------------------------------', response)
         res.json(response.data)

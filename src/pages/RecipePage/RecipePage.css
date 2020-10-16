@@ -14,7 +14,18 @@
     box-shadow: 1px 2px 3px black;
 }
 
+.RecipePage-Link {
+    text-decoration: none;
+    color: rgb(19, 95, 161);
+    margin: 15px auto 0;
+}
+
+.RecipePage-Link:hover {
+    color: white;
+}
+
 .RecipePage h1 {
+    text-decoration: underline;
     text-align: center;
 }
 
