@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Link } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RecipePage from '../RecipePage/RecipePage';
@@ -105,7 +106,7 @@ class App extends Component {
           } />
         </Switch>
         <footer className="App-footer">
-          <p>Site Created By: Charles MacMillan</p>
+          <p>Site Created By: <a href="https://github.com/charlesmacmillan">Charles MacMillan</a></p>
           </footer>
           </div>
       </div>

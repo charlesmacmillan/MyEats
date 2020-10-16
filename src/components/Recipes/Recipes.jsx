@@ -9,16 +9,21 @@ const Recipes = props => {
     useEffect(() => {
         spoonacular.getAll().then(res => setRecipes(res))
     }, [props.things])
-    return (
-        <div className="Recipes-container">
-            <div className="Recipes-box">
+    let recipees = recipes.length ? 
+        <div className="Recipes-box">
                 {recipes.map((recipe, i) =>
                     <Recipe 
                         recipe={recipe}
                         key={i}
                     />
                 )}
-            </div>
+        </div>
+        :
+        <h1 className="advice"> &#128072; Add ingredients, then recipes will show up here &#128073;</h1>
+
+    return (
+        <div className="Recipes-container">
+          {recipees}
         </div>
     )
 }
