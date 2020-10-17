@@ -39,16 +39,16 @@ a.Recipe-box {
 
 .Recipe-ing-count {
     display: flex;
-    margin-top: -30px;
-    padding: 0 10%;
-    justify-content: space-around;
+    margin-top: -29px;
+    /* margin-bottom: 5px; */
+    /* padding: 0 10%; */
+    justify-content: flex-start;
 }
 
 .Recipe-not-from,
 .Recipe-from,
 .Recipe-unused {
     padding: 5px;
-    border-radius: 50%;
     color: white;
     font-weight: bold;
     height: 14px;
@@ -57,13 +57,25 @@ a.Recipe-box {
 
 .Recipe-from {
     background-color: rgb(1, 155, 1);
+    /* border-left: 1px solid black; */
+    /* border-bottom: 1px solid black; */
+    border-top: 1px solid black;
+    border-radius: 0 0 0 9px;
 }
 
 .Recipe-not-from {
+    /* border-bottom: 1px solid black; */
+    border-top: 1px solid black;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
     background-color: rgb(0, 0, 255);
 }
 
 .Recipe-unused {
+    /* border-bottom: 1px solid black; */
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-radius:  0 10px 0 0;
     background-color: rgb(255, 0, 0);
 }
 
