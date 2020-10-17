@@ -10,14 +10,32 @@ const Recipes = props => {
         spoonacular.getAll().then(res => setRecipes(res))
     }, [props.things])
     let recipees = recipes.length ? 
-        <div className="Recipes-box">
-                {recipes.map((recipe, i) =>
-                    <Recipe 
-                        recipe={recipe}
-                        key={i}
-                    />
-                )}
-        </div>
+        <>  
+            <div className="Recipes-key">
+                <p>key</p>
+                     <small>ingredients count</small>
+                 <div className="Recipes-key-counter">
+                     <div className="Recipes-key-piece">
+                        <small>from<br/>inventory</small>
+                        <small className="Recipe-from"></small>
+                    </div><div className="Recipes-key-piece">
+                        <small>not<br/>from<br/>inventory</small>
+                        <small className="Recipe-not-from"></small>
+                    </div><div className="Recipes-key-piece">
+                        <small>unused<br/>from<br/>inventory</small>
+                        <small className="Recipe-unused"></small>
+                    </div>
+                </div>
+            </div>
+            <div className="Recipes-box">
+                    {recipes.map((recipe, i) =>
+                        <Recipe 
+                            recipe={recipe}
+                            key={i}
+                        />
+                    )}
+            </div>
+        </>
         :
         <h1 className="advice"> &#128072; Add ingredients, then recipes will show up here &#128073;</h1>
 

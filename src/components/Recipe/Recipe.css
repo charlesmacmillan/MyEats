@@ -4,12 +4,11 @@
     align-items: center;
     justify-content: space-between;
     width: 200px;
-    color: black;
     text-align: center;
     background-color: rgb(226, 241, 255);
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px black;
-    padding: 10px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.61);
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px slategray;
     margin: 5px;
 }
 
@@ -18,20 +17,58 @@
 }
 
 .Recipe-box h3 {
+    color: black;
     margin: 5px;
-    text-decoration: underline;
+}
+
+.h3 {
+    display: flex;
+    align-items: center;
+}
+
+a.Recipe-box {
+    text-decoration: none;
 }
 
 .Recipe-box img {
-    width: 90%;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.61);
-    box-shadow: 1px 2px 3px black;
-    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-radius: 0 0 10px 10px;
 }
 
-@media only screen and (max-width: 700px) {
+.Recipe-ing-count {
+    display: flex;
+    margin-top: -30px;
+    padding: 0 10%;
+    justify-content: space-around;
+}
+
+.Recipe-not-from,
+.Recipe-from,
+.Recipe-unused {
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    height: 15px;
+    width: 15px;
+}
+
+.Recipe-from {
+    background-color: rgb(1, 155, 1);
+}
+
+.Recipe-not-from {
+    background-color: rgb(0, 0, 255);
+}
+
+.Recipe-unused {
+    background-color: rgb(255, 0, 0);
+}
+
+
+@media only screen and (max-width: 590px) {
     .Recipe-box {
-        padding: 0;
+        width: 90%;
     }
 }

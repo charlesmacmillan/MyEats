@@ -12,19 +12,21 @@ const Inventory = (props) => {
         thingApi.getAll().then(res => setThings(res))
     }, [props.things])
     return (
-        <div className="Inventory-box">
-            <h2>Ingredients</h2>
-                {things.map((thing, i) => (
-                    <InventoryThing
-                        handleDeleteThing={props.handleDeleteThing}
-                        thing={thing}
-                        i={i}
-                        key={thing._id}
-                    />
-                ))}
-            <AddThingForm
-                handleAddThing={props.handleAddThing}
-            />
+        <div className="Inventory-box-container">
+            <div className="Inventory-box">
+                <h2>Ingredients</h2>
+                    {things.map((thing, i) => (
+                        <InventoryThing
+                            handleDeleteThing={props.handleDeleteThing}
+                            thing={thing}
+                            i={i}
+                            key={thing._id}
+                        />
+                    ))}
+                <AddThingForm
+                    handleAddThing={props.handleAddThing}
+                />
+            </div>
         </div>
     )
 }
