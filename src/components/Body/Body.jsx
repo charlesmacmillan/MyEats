@@ -23,7 +23,12 @@ const Body = (props) => {
         <div className="Body-message">
             <h1>Please <Link to='/login' className='NavBar-link'>LOG IN</Link>
              or
-            <Link to='/signup' className='NavBar-link'>SIGN UP</Link> to use this app :) </h1>
+            <Link to='/signup' className='NavBar-link'>SIGN UP</Link> to use this app  </h1>
+            <h4>Why use this app?</h4>
+            <li>Save what ingredients you have in your kitchen into our database!</li>
+            <li>Get great recipe ideas based on those ingredients!</li>
+            <li>Our recipes have easy to follow instructions!</li>
+            <li></li>
         </div>
     return (
         content

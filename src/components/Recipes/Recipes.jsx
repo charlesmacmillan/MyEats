@@ -37,7 +37,7 @@ const Recipes = props => {
             </div>
         </>
         :
-        <h1 className="advice"> &#128072; Add ingredients, then recipes will show up here &#128073;</h1>
+        <h1 className="advice"> &#128072; Add ingredients, then recipes will show up here</h1>
 
     return (
         <div className="Recipes-container">
