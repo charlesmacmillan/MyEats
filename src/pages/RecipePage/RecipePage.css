@@ -85,6 +85,7 @@
 .RecipePage-ingredients {
     width: 100%;
     display: flex;
+    margin: 10px 0;
     flex-direction: column;
     align-items: center;
 }
@@ -97,8 +98,9 @@
     width: 95%;
 }
 
-ul {
-    margin: 0;
+.RecipePage-ul {
+    width: 75%;
+    margin: 3px;
     padding: 0;
 }
 
@@ -116,8 +118,8 @@ ul {
 }
 
 .steps {
+    margin: 20px 0;
     width: 90%;
-    margin-bottom: 20px;
 }
 
 .steps li {
