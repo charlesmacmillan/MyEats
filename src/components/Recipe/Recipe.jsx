@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Recipe.css';
 
 const Recipe = (props) => {
-    console.log(props.recipe)
     return (
         <Link 
         to={{ 

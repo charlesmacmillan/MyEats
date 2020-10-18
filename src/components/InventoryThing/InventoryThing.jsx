@@ -7,7 +7,7 @@ const InventoryThing = (props) => {
     return (
         <div className="InventoryThing">
             <li
-                style={{ 
+                style={{
                     color: colors[props.i % colors.length],
                     textTransform: 'capitalize'
                 }}

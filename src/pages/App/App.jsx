@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Link } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RecipePage from '../RecipePage/RecipePage';
@@ -50,22 +49,6 @@ class App extends Component {
     this.setState({user: userService.getUser()})
   }
 
-/*--- Lifecycle Methods ---*/
-  // async componentDidMount() {
-  //   const things = await thingAPI.getAll();
-  //   this.setState({
-  //     things: things
-  //   });
-  // }
-  
-  // async componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.user !== this.state.user) {
-  //     const things = await thingAPI.getAll();
-  //     this.setState({
-  //       things: things
-  //       });
-  //   }
-  // }
 
   render() {
     return (
