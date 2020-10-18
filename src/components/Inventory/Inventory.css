@@ -2,17 +2,22 @@
     grid-area: 1/2/5/3;
     margin: 0;
     padding: 0;
+    position: fixed;
+    margin-left: 15px;
 }
 
 .Inventory-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 175px;
+    max-height: 75vh;
     background-color: rgb(75, 75, 75);
     border: 1px solid rgba(0, 0, 0, 0.411);
     box-shadow: 1px 2px 4px rgb(0, 0, 0);
     margin-top: 50px;
     border-radius: 10px;
+    overflow-y: auto;
 }
 
 .Inventory-box h2 {
@@ -29,9 +34,12 @@
 }
 
 @media only screen and (max-width: 700px) {
+    .Inventory-box-container {
+        margin-left: 5px;
+    }
+
     .Inventory-box {
-        grid-area: 1/2/5/4;
-        /* width: 125px; */
+        width: 120px;
     }
 
     .Inventory-box h2 {
