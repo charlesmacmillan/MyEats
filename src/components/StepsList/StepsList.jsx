@@ -21,9 +21,9 @@ const StepsList = props => {
     <h4>Sorry! There are no instructions available for this recipe <span role="img" aria-label="img">&#128530;</span></h4>
 
     return (
-        <div>
+        <>
             {stepsHTML}
-        </div>
+        </>
     )
 }
 
