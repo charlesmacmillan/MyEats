@@ -15,6 +15,7 @@ const Inventory = (props) => {
         <div className="Inventory-box-container">
             <div className="Inventory-box">
                 <h2>Ingredients</h2>
+                <ul>
                     {things.map((thing, i) => (
                         <InventoryThing
                             handleDeleteThing={props.handleDeleteThing}
@@ -23,6 +24,7 @@ const Inventory = (props) => {
                             key={thing._id}
                         />
                     ))}
+                </ul>
                 <AddThingForm
                     handleAddThing={props.handleAddThing}
                 />

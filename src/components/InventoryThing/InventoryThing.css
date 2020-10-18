@@ -10,6 +10,7 @@
 
 .InventoryThing li {
     width: 100px;
+    margin-left: 5px;
     word-wrap: break-word;
 }
 

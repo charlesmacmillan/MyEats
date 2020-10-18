@@ -17,7 +17,13 @@
     box-shadow: 1px 2px 4px rgb(0, 0, 0);
     margin-top: 50px;
     border-radius: 10px;
+}
+
+.Inventory-box ul {
     overflow-y: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .Inventory-box h2 {
