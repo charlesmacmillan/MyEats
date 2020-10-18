@@ -1,4 +1,5 @@
 .RecipePage {
+    grid-area: 1/1/6/6;
     display: flex;
     flex-direction: column;
     justify-content: center;
