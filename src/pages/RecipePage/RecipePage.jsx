@@ -41,8 +41,8 @@ const RecipePage = props => {
                 {recipe.usedIngredients.map((ing, i) =>
                     <li className="RecipePage-ing" key={i}>
                          <img className="from" src={ing.image} alt=""/>&nbsp;&nbsp;
-                        <p>{ing.original}</p>
-                    </li>
+                        {ing.original}
+                    </li> 
                 )}
                 {recipe.missedIngredients.map((ing, i) => 
                     <li className="RecipePage-ing" key={i}>
