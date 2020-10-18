@@ -4,9 +4,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgba(188, 143, 143, 0.808);
-    width: 75%;
+    /* width: 75%;
     max-width: 700px;
-    min-width: 300px;
+    min-width: 300px; */
     margin: 25px auto 0;
     border: 1px solid rgba(0, 0, 0, 0.356);
     border-radius: 10px;
