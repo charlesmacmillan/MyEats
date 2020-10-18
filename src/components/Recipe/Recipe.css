@@ -40,8 +40,6 @@ a.Recipe-box {
 .Recipe-ing-count {
     display: flex;
     margin-top: -29px;
-    /* margin-bottom: 5px; */
-    /* padding: 0 10%; */
     justify-content: flex-start;
 }
 
@@ -57,8 +55,6 @@ a.Recipe-box {
 
 .Recipe-from {
     background-color: rgb(1, 155, 1);
-    /* border-left: 1px solid black; */
-    /* border-bottom: 1px solid black; */
     border-top: 1px solid black;
     border-radius: 0 0 0 9px;
 }
@@ -66,8 +62,8 @@ a.Recipe-box {
 .Recipe-not-from {
     /* border-bottom: 1px solid black; */
     border-top: 1px solid black;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
+    /* border-left: 1px solid transparent;
+    border-right: 1px solid transparent; */
     background-color: rgb(0, 0, 255);
 }
 
