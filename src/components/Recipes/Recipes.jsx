@@ -36,7 +36,7 @@ const Recipes = props => {
             </div>
         </>
         :
-        <h1 className="advice"> &#128072; &nbsp;&nbsp;Start adding ingredients, then recipes will show up here</h1>
+        <h1 className="advice"> <span role="img" aria-label="img">&#128072;</span> &nbsp;&nbsp;Start adding ingredients, then recipes will show up here</h1>
 
     return (
         <div className="Recipes-container">
