@@ -19,6 +19,7 @@ https://trello.com/b/x5aypWi5/myeats
 - Express
 - CSS
 - MongoDB
+- JWT
 
 ## <ins>**Next Steps**
 - Fix iPhone recipe details-page glitch.   
