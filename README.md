@@ -21,8 +21,11 @@ https://trello.com/b/x5aypWi5/myeats
 - MongoDB
 
 ## <ins>**Next Steps**
-- Fix iphone recipe show page glitch (only happens on iphone, not android for some reason)
-    <img src="https://i.imgur.com/rewdu4D.png" style="border-radius: 10px; border: 1px solid black;">
+- Fix iPhone recipe details-page glitch.   
+    - Andriod display:
+     <img src="https://i.imgur.com/xxTLosM.png" style="border-radius: 10px; border: 1px solid black;">
+    - iPhone display:
+     <img src="https://i.imgur.com/rewdu4D.png" style="border-radius: 10px; border: 1px solid black;">  
 - Add more functionality 
     - Filters (gluten free, vegan, meal types etc.)
     - Priority indicators (choose which ingredients are searched for)
