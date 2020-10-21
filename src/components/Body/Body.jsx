@@ -29,6 +29,7 @@ const Body = (props) => {
             <li>Get great recipe ideas based on those ingredients!</li>
             <li>Our recipes have easy to follow instructions!</li>
             <li></li>
+            <img className="Body-img" src="https://i.imgur.com/kWYgZbK.png" alt=""/>
         </div>
     return (
         content
